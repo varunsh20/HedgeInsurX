@@ -21,10 +21,9 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
  - **CCIP** contract that is used to implement cross-chain bridge for transferring assets across multiple networks.
 
 ### Frontend
- - **JavaScript**
- - **React.js**
- - **Ethers.js** 
- - **Chakra-UI**
+ - **JavaScript & React.js** for building interactive dynamic UI interface.
+ - **Ethers.js** for integrating the Smart Contracts with UI application.
+ - **Chakra-UI** Library for designing and styling UI.
    
 ## :computer: Getting Started
 ### :bangbang: Prerequisites
