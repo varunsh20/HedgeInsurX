@@ -1,1 +1,1 @@
-Live App - https://hedgeinsurx.netlify.app/home*
+Live App - https://hedgeinsurx.netlify.app/home
