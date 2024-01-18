@@ -1,0 +1,27 @@
+{
+  "name": "hardhat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chainlink/contracts-ccip": "^1.2.1",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.18.1"
+  },
+  "dependencies": {
+    "@iden3/contracts": "^1.4.3",
+    "@iden3/js-iden3-core": "^1.2.1",
+    "@iden3/js-jsonld-merklization": "^1.1.2",
+    "@iden3/js-jwz": "^1.2.1",
+    "@openzeppelin/contracts": "^5.0.0",
+    "solidity-bytes-utils": "^0.8.0",
+    "web3": "^4.3.0"
+  }
+}

@@ -1,0 +1,12 @@
+.cbtn{
+    color: white !important; 
+    background-color:#5684db !important;
+    font-size: 1.3rem !important;
+    font-weight:600;
+    font-family: Mabry-Regular  !important;
+}
+
+.cbtn:hover{
+    color: white !important; 
+    background-color: #3169d1 !important;
+}

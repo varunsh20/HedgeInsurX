@@ -1,0 +1,34 @@
+[
+    {
+        "img": "https://cdn.moralis.io/eth/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0.png",
+        "name": "Mumbai",
+        "address": "0x20508E18C6944948a32016dCB23053A86fD3aA00",
+        "chainSelector":"12532609583862916517",
+        "ccipBnmToken":"0xf1E3A5842EeEF51F2967b3F05D45DD4f4205FF40",
+        "chainId": 80001
+    },
+    {
+        "img": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+        "name": "Sepolia",
+        "address": "0x33ccF5E0fbD2c9FA0F286c584B36b004513Df90D",
+        "chainSelector":"16015286601757825753",
+        "ccipBnmToken":"0xFd57b4ddBf88a4e07fF4e34C487b99af2Fe82a05",
+        "chainId": 11155111
+    },
+    {
+        "img": "https://cdn.moralis.io/eth/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.png",
+        "name": "BSC Testnet",
+        "address": "0xF1ADcc2b77e452A4477c00EFcB89fa96ea00295f",
+        "chainSelector":"13264668187771770619",
+        "ccipBnmToken":"0xbfa2acd33ed6eec0ed3cc06bf1ac38d22b36b9e9",
+        "chainId": 97
+    },
+    {
+        "img": "https://cdn.moralis.io/eth/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0.png",
+        "name": "Arbitrum Sepolia",
+        "address": "0xF1ADcc2b77e452A4477c00EFcB89fa96ea00295f",
+        "chainSelector":"3478487238524512106",
+        "ccipBnmToken":"0xA8C0c11bf64AF62CDCA6f93D3769B88BdD7cb93D",
+        "chainId": 421614
+    }
+]
