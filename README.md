@@ -7,13 +7,32 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
 ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/96fa2eda-48e8-4461-a6db-165d0edde4a4)
 
 ## :computer: Getting Started:
-- ### :bangbang: Prerequisites
-  - node
+### :bangbang: Prerequisites
+ - node
      ```
      >Node v16.5.0 
      ```
   - npm
+    ```
     npm install npm@latest -g
-- ### Installation
-  
+    ```
+### :gear: Installation
+- Clone the repository
+     ```
+     git clone https://github.com/varunsh20/HedgeInsurX.git
+     ```
+- Install the dependencies
+  ```
+  npm install
+  ```
+### :running_man: Run Locally
+  - Go to frontend folder 
+    ```
+    cd frontend
+    ```
+  -  Run command
+    ```
+    npm run dev
+    ```
+
 Live App - https://hedgeinsurx.netlify.app/home
