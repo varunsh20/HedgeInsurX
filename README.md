@@ -44,14 +44,20 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
   ```
   npm install
   ```
+### :key: Environment Variables
+ - Add the values of the following varibles in your .env file
+    ```
+    VITE_RPC_URL
+    VITE_PRIVATE_KEY
+    ```
 ### :running_man: Run Locally
   - Go to frontend folder 
     ```
     cd frontend
     ```
   -  Run command
-    ```
-    npm run dev
-    ```
+     ```
+     npm run dev
+     ```
 
 Live App - https://hedgeinsurx.netlify.app/home
