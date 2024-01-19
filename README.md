@@ -97,7 +97,8 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/baa27c40-8f93-4182-8ed7-7830c65b5098)  
 
 - Below is a demo implementation of how they credentials are issued and stored in App. For sample we have generated the credentials directly from the issuer's QR code.
-https://github.com/varunsh20/HedgeInsurX/assets/62187533/611e7c5d-18b4-404b-8784-5b854fac0567
+- 
+ https://github.com/varunsh20/HedgeInsurX/assets/62187533/611e7c5d-18b4-404b-8784-5b854fac0567
 
  - These credentials are verified OnChain using **@iden3's ZKPVerifier && Polygon ID validator smart contracts**. This happens when user scans the QR code that contains the ZKP Query Request in which we set the value of **validClaimRequest as 1** so that it is passed only for those credentials that have its value as **true**.
  -  After the credential value matches with the query, users are prompted to select their wallet where the function **submitZKPResponse()** is called.
