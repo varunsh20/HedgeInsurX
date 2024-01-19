@@ -59,5 +59,21 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
      ```
      npm run dev
      ```
+## :eyes: Usage
+
+**This project main focusses on Three main Domains. Their usage and working in the project are desrcibed as below:-**
+
+### Defi Yield Strategies
+  - We allow users to invest their liquidity in our strategies to generate safe and stable returns.
+  - Currently there are two different types of strategies that differs in the way they handle the liquidity to generate returns.
+     ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/fb9c58f3-80a9-4686-a60f-5310ac494a33)
+
+ - First One is a **Low-Risk & Stable Returns** type Strategy and is more suitable for those who wants to invest for a **Long-Term**. This strategy compares the Lending
+   Rates of assets (Currently USDC) on platforms like AAVE, Compound etc and invests in the protocol that offers better rates. Users are free to withdraw thier funds           and close the position any time they want.
+    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/03c840c2-c0e0-4190-ad3a-222fccd7b8e7)
+
+
+### OnChain Insurance
+### Cross Chain Bridge
 
 Live App - https://hedgeinsurx.netlify.app/home
