@@ -68,12 +68,42 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
   - Currently there are two different types of strategies that differs in the way they handle the liquidity to generate returns.
      ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/fb9c58f3-80a9-4686-a60f-5310ac494a33)
 
- - First One is a **Low-Risk & Stable Returns** type Strategy and is more suitable for those who wants to invest for a **Long-Term**. This strategy compares the Lending
+ - **First One** is a **Low-Risk & Stable Returns** type Strategy and is more suitable for those who wants to invest for a **Long-Term**. This strategy compares the Lending
    Rates of assets (Currently USDC) on platforms like AAVE, Compound etc and invests in the protocol that offers better rates. Users are free to withdraw thier funds           and close the position any time they want.
     ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/03c840c2-c0e0-4190-ad3a-222fccd7b8e7)
 
+- **Second Strategy** is of medium risk category and generates slightly better yield than first one. This strategy works by investing half amount of user's funds as  
+  collateral in AAVE where it earns interest, it then borrows another asset (USDT currently) against the supplied collateral and supply the remaining amount of asset and the 
+  borrowed asset (USDC+UDST) in a pair to USDC-USDT Liquidity Pool in Uniswap-V3 where the liquidity earns the Trading fees. Here users will have to close the complete  
+ position and withdraw their funds all at once.
+
+  ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/ecdc4884-1722-4704-88b1-68c4b2627574)
 
 ### OnChain Insurance
+ - We have integrated the capability of providing **OnChain Insurance** to protect User's funds against any kind of Onchain Risk including a bug in the code, Rug Pull, etc.
+ - We have three different categories of Insurance Schemes based on Low, Medium and High Risk level that are further divided on the basis of Cover Amount and Duration like 1 , 3 and 6 months. So that makes a total of 9 Insurance Schemes.
+ - Users can select from any of these schemes according to their choice and pay premium amount all at once.
+   ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/4e55de23-ded4-4e83-b60b-b11aa05f403f)
+
+ ####Claim Verification
+  **We have used Polygon ID's for issuing credentials and for our claim verification process. The complete process from request to receiving funds is explained below.**
+   - First users will have to submit a **Claim Request** form under their purchased policies, that asks for some basic user details like their Polygon DID's (to issue credentials to them directly), approx loss amount, event date etc.
+      ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/8193512d-36a7-4647-91ef-0b72a56b08da)
+
+   - After detailed verification from our side, they will be issued a credential namely **InsuranceClaimsCredential** that contains an attribute called **validClaimRequest**.
+      It's value determines whether the claim request made by user is authentic and valid.
+
+ - In order to complete the verification process, users will have to scan and submit the ZK-Proof of their issued credential that will transfer the funds after successful verification.
+    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/baa27c40-8f93-4182-8ed7-7830c65b5098)
+
+ - These credentials are verified OnChain using **@iden3's ZKPVerifier && Polygon ID validator smart contracts**. This happens when user scans the QR code that contains the ZKP Query Request in which we set the value of **validClaimRequest as 1** so that it is passed only for those credentials that have its value as **true**.
+ -  After the credential value matches with the query, users are prompted to select their wallet where the function **submitZKPResponse()** is called.
+   
+     
+
+https://github.com/varunsh20/HedgeInsurX/assets/62187533/611e7c5d-18b4-404b-8784-5b854fac0567
+
+
 ### Cross Chain Bridge
 
-Live App - https://hedgeinsurx.netlify.app/home
+Live App - https://hedgeinsurx.netlify.app/
