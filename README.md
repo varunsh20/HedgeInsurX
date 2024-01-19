@@ -87,7 +87,7 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
  - Users can select from any of these schemes according to their choice and pay premium amount all at once.
    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/4e55de23-ded4-4e83-b60b-b11aa05f403f)
 
- ####Claim Verification
+ ### Claim Verification
   **We have used Polygon ID's for issuing credentials and for our claim verification process. The complete process from request to receiving funds is explained below.**
    - First users will have to submit a **Claim Request** form under their purchased policies, that asks for some basic user details like their Polygon DID's (to issue credentials to them directly), approx loss amount, event date etc.
       ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/8193512d-36a7-4647-91ef-0b72a56b08da)
@@ -118,10 +118,10 @@ https://drive.google.com/file/d/1ar3GMlZwG-X5V1XOFXpaOY5_u0_QllDz/view?usp=shari
 - Users first transfer their assets to our smart contract which then calls the CCIP's smart contract for asset transfers. Our contract is already funded with Link tokens on all the networks for paying the gas fees for cross-chain transfers.
 
 ## :ledger: References:
-**Following References were used for implementing different functionalities in the project**
+**Following References were used for implementing different functionalities in the project:-**
  - https://devs.polygonid.com/docs/verifier/on-chain-verification/overview/
  - https://github.com/aave/aave-utilities
  - https://docs.compound.finance/collateral-and-borrowing/
  - https://docs.chain.link/ccip/tutorials/cross-chain-tokens
 
-**Please leave a :star2: on the repo if you like it.**
+**Please drop a :star2: on the repo if you like it.**
