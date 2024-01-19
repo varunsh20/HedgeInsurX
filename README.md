@@ -4,6 +4,8 @@
 
 HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by Investing in our highly **Optimized-Strategies**. These strategies analyzes the Lending and Borrowing Rates of protocols like AAVE, Compound etc and Fees offered by Liquidity Pools in Uniswap and then deposits your Liquidity Accordingly such that the invested amount always earns a high yield. We have also implemented the functionality of **OnChain Protection** for users funds in the form of Insurance. Users can select from a variety of schemes based on their choice and get themselves Insured from any kind of Onchain-Risks. We have utilized Polygon ID's for issuing and verifiying the complete Insurance Claim process through our "**InsuranceClaims Credentials**". Users will have to submit a **ZK-Proof** of their Issued Credentials through **Polygon ID App** in order to get verified and receive **Cover Amount**. Also users can transfer their funds across multiple networks through our **Cross-Chain** Bridge implemented using **ChainLink's CCIP**.
 
+**Go To [Site](https://hedgeinsurx.netlify.app/)
+
 ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/96fa2eda-48e8-4461-a6db-165d0edde4a4)
 
 ## :hammer_and_wrench: Tech Stack
@@ -97,7 +99,7 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/baa27c40-8f93-4182-8ed7-7830c65b5098)  
 
 - Below is a demo implementation of how they credentials are issued and stored in App. For sample we have generated the credentials directly from the issuer's QR code.
-- 
+  
 
 https://github.com/varunsh20/HedgeInsurX/assets/62187533/98fc7353-6655-493c-8670-322e60eba576
 
@@ -105,9 +107,21 @@ https://github.com/varunsh20/HedgeInsurX/assets/62187533/98fc7353-6655-493c-8670
 
  - These credentials are verified OnChain using **@iden3's ZKPVerifier && Polygon ID validator smart contracts**. This happens when user scans the QR code that contains the ZKP Query Request in which we set the value of **validClaimRequest as 1** so that it is passed only for those credentials that have its value as **true**.
  -  After the credential value matches with the query, users are prompted to select their wallet where the function **submitZKPResponse()** is called.
-- Here is the demo of how claim requests are validated from the UI's QR and how ZK-Proofs are submitted.
+- Here is a demo showing how claim requests are validated from the UI's QR and how ZK-Proofs are submitted.
 https://drive.google.com/file/d/1ar3GMlZwG-X5V1XOFXpaOY5_u0_QllDz/view?usp=sharing
 
 ### Cross Chain Bridge
+ - Users can transfer their assets cross-chain using our **Bridge**.
+ - This Bridge is implemented using **ChainLink's CCIP**. Currently we support cross-chain transfers across 4 networks i.e. **Mumbai, Sepolia, BSC Testnet, Arbitrum Sepolia**.
+ - On testnet chainlink supports only its native BnM and LnM tokens, so we have used BnM tokens as the main asset. And fees is paid using Link's token.
+    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/7c83f383-069b-48f5-8435-8fa99a4ff6bc)
+- Users first transfer their assets to our smart contract which then calls the CCIP's smart contract for asset transfers. Our contract is already funded with Link tokens on all the networks for paying the gas fees for cross-chain transfers.
 
-Live App - https://hedgeinsurx.netlify.app/
+## :ledger: References:
+**Following References were used for implementing different functionalities in the project**
+ - https://devs.polygonid.com/docs/verifier/on-chain-verification/overview/
+ - https://github.com/aave/aave-utilities
+ - https://docs.compound.finance/collateral-and-borrowing/
+ - https://docs.chain.link/ccip/tutorials/cross-chain-tokens
+
+**Please leave a :star2: on the repo if you like it.**
