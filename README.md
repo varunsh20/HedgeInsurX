@@ -90,19 +90,19 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
    - First users will have to submit a **Claim Request** form under their purchased policies, that asks for some basic user details like their Polygon DID's (to issue credentials to them directly), approx loss amount, event date etc.
       ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/8193512d-36a7-4647-91ef-0b72a56b08da)
 
-   - After detailed verification from our side, they will be issued a credential namely **InsuranceClaimsCredential** that contains an attribute called **validClaimRequest**.
-      It's value determines whether the claim request made by user is authentic and valid.
+   - After detailed verification from our side, they will be issued a credential namely **InsuranceClaimsCredential** that contains an attribute called **validClaimRequest**. It's value determines whether the claim request made by user is authentic and valid.
 
- - In order to complete the verification process, users will have to scan and submit the ZK-Proof of their issued credential that will transfer the funds after successful verification.
-    ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/baa27c40-8f93-4182-8ed7-7830c65b5098)
+ - In order to complete the verification process, users will have to scan and submit the ZK-Proof of their issued credential that will transfer the funds after successful 
+   verification.
+   ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/baa27c40-8f93-4182-8ed7-7830c65b5098)  
+
+- Below is a demo implementation of how they credentials are issued and stored in App. For sample we have generated the credentials directly from the issuer's QR code.
+https://github.com/varunsh20/HedgeInsurX/assets/62187533/611e7c5d-18b4-404b-8784-5b854fac0567
 
  - These credentials are verified OnChain using **@iden3's ZKPVerifier && Polygon ID validator smart contracts**. This happens when user scans the QR code that contains the ZKP Query Request in which we set the value of **validClaimRequest as 1** so that it is passed only for those credentials that have its value as **true**.
  -  After the credential value matches with the query, users are prompted to select their wallet where the function **submitZKPResponse()** is called.
-   
-     
-
-https://github.com/varunsh20/HedgeInsurX/assets/62187533/611e7c5d-18b4-404b-8784-5b854fac0567
-
+- Here is the demo of how claim requests are validated from the UI's QR and how ZK-Proofs are submitted.
+https://drive.google.com/file/d/1ar3GMlZwG-X5V1XOFXpaOY5_u0_QllDz/view?usp=sharing
 
 ### Cross Chain Bridge
 
