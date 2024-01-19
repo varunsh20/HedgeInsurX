@@ -4,7 +4,7 @@
 
 HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by Investing in our highly **Optimized-Strategies**. These strategies analyzes the Lending and Borrowing Rates of protocols like AAVE, Compound etc and Fees offered by Liquidity Pools in Uniswap and then deposits your Liquidity Accordingly such that the invested amount always earns a high yield. We have also implemented the functionality of **OnChain Protection** for users funds in the form of Insurance. Users can select from a variety of schemes based on their choice and get themselves Insured from any kind of Onchain-Risks. We have utilized Polygon ID's for issuing and verifiying the complete Insurance Claim process through our "**InsuranceClaims Credentials**". Users will have to submit a **ZK-Proof** of their Issued Credentials through **Polygon ID App** in order to get verified and receive **Cover Amount**. Also users can transfer their funds across multiple networks through our **Cross-Chain** Bridge implemented using **ChainLink's CCIP**.
 
-[View Site](https://hedgeinsurx.netlify.app/)
+[View dApp](https://hedgeinsurx.netlify.app/)
 
 ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/96fa2eda-48e8-4461-a6db-165d0edde4a4)
 
@@ -76,8 +76,8 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
 
 - **Second Strategy** is of medium risk category and generates slightly better yield than first one. This strategy works by investing half amount of user's funds as  
   collateral in AAVE where it earns interest, it then borrows another asset (USDT currently) against the supplied collateral and supply the remaining amount of asset and the 
-  borrowed asset (USDC+UDST) in a pair to USDC-USDT Liquidity Pool in Uniswap-V3 where the liquidity earns the Trading fees. Here users will have to close the complete  
- position and withdraw their funds all at once.
+  borrowed token (USDC+UDST) in a pair to USDC-USDT Liquidity Pool in Uniswap-V3 where the liquidity earns the Trading fees. Here users will have to close the complete  
+ position and withdraw their funds plus the fees rewards earned all at once.
 
   ![image](https://github.com/varunsh20/HedgeInsurX/assets/62187533/ecdc4884-1722-4704-88b1-68c4b2627574)
 
