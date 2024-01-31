@@ -19,6 +19,7 @@ HedgeInsurX is a Platform where you can Generate safe yield on your Liquidity by
  - **ThirdWeb** library for easy wallet integration and supporting mulitple networks.
  - **ERC-20** standard for evm compatible tokens used in the dApp and **ERC-4626** contract for our Tokenized Vault used to provide claims amount to users.
  - SDK's and Smart Contracts of **AAVE-V3 (@aave/protocol-js), Compound-V3 or Comet (Compound.js) and UniSwap (@uniswap/v3-sdk & sdk-core )** for implementing these protocols in our **Strategies**.
+ - **Zero-Knowledge Proofs (ZKP) - Polygon ID (iden3 circuits, custom schema generation)** 
  - **Zk-Proof** verifier contract used to verify the credentials submitted by users for the claim request verification process.
  - **CCIP** contract that is used to implement cross-chain bridge for transferring assets across multiple networks.
 
