@@ -32,26 +32,26 @@ async function fetchAaveData() {
 
   // View contract used to fetch all reserves data (including market base currency data), and user reserves
   const poolDataProviderContract = new UiPoolDataProvider({
-    uiPoolDataProviderAddress: markets.AaveV3Mumbai.UI_POOL_DATA_PROVIDER,
+    uiPoolDataProviderAddress: markets.AaveV3Sepolia.UI_POOL_DATA_PROVIDER,
     provider,
-    chainId: ChainId.mumbai,
+    chainId: ChainId.sepolia,
   });
 
   // View contract used to fetch all reserve incentives (APRs), and user incentives
   const incentiveDataProviderContract = new UiIncentiveDataProvider({
     uiIncentiveDataProviderAddress:
-    markets.AaveV3Mumbai.UI_INCENTIVE_DATA_PROVIDER,
+    markets.AaveV3Sepolia.UI_INCENTIVE_DATA_PROVIDER,
     provider,
-    chainId: ChainId.mumbai,
+    chainId: ChainId.sepolia,
   });
 
   let usdcInfo;
   const reserves = await poolDataProviderContract.getReservesHumanized({
-    lendingPoolAddressProvider: markets.AaveV3Mumbai.POOL_ADDRESSES_PROVIDER,
+    lendingPoolAddressProvider: markets.AaveV3Sepolia.POOL_ADDRESSES_PROVIDER,
   });
   
   const userReserves = await poolDataProviderContract.getUserReservesHumanized({
-    lendingPoolAddressProvider: markets.AaveV3Mumbai.POOL_ADDRESSES_PROVIDER,
+    lendingPoolAddressProvider: markets.AaveV3Sepolia.POOL_ADDRESSES_PROVIDER,
     user: currentAccount,
   });
 
@@ -59,14 +59,14 @@ async function fetchAaveData() {
   const reserveIncentives =
     await incentiveDataProviderContract.getReservesIncentivesDataHumanized({
       lendingPoolAddressProvider:
-        markets.AaveV3Mumbai.POOL_ADDRESSES_PROVIDER,
+        markets.AaveV3Sepolia.POOL_ADDRESSES_PROVIDER,
     });
 
   // Dictionary of claimable user incentives
   const userIncentives =
     await incentiveDataProviderContract.getUserReservesIncentivesDataHumanized({
       lendingPoolAddressProvider:
-        markets.AaveV3Mumbai.POOL_ADDRESSES_PROVIDER,
+        markets.AaveV3Sepolia.POOL_ADDRESSES_PROVIDER,
       user: currentAccount,
     });
 
@@ -110,11 +110,22 @@ async function fetchAaveData() {
   return ({APY:usdcInfo.supplyAPY*100,BorrowAPY:usdcInfo.variableBorrowAPY*100,Address:usdcInfo.underlyingAsset,Pool:aavePool});
 }
 
+const cometAbi = [
+  'function getSupplyRate(uint) public view returns (uint)',
+  'function getBorrowRate(uint) public view returns (uint)',
+  'function getUtilization() public view returns (uint)',
+  'function baseTokenPriceFeed() public view returns (address)',
+  'function getPrice(address) public view returns (uint128)',
+  'function totalSupply() external view returns (uint256)',
+  'function totalBorrow() external view returns (uint256)',
+  'function baseIndexScale() external pure returns (uint64)',
+  'function baseTrackingSupplySpeed() external view returns (uint)',
+  'function baseTrackingBorrowSpeed() external view returns (uint)',
+];
+
 async function fetchCompoundData(){
   const SECONDS_PER_YEAR = 31536000
-  var compound = new Compound(RPC_URL,{
-    privateKey:privateKey,});
-  const comet = compound.comet.MUMBAI_USDC();
+  const comet = new ethers.Contract(cometUSDCPool, cometAbi, provider);
   const utilization = await comet.getUtilization();
   const supplyRate = await comet.getSupplyRate(utilization);
   const supplyAPY = (supplyRate/Math.pow(10,18))*SECONDS_PER_YEAR*100;
