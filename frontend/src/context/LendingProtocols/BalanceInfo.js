@@ -6,39 +6,39 @@ import dayjs from 'dayjs';
 import Compound from '@compound-finance/compound-js';
 
 const provider = new ethers.providers.JsonRpcProvider(
-  'https://polygon-mumbai.g.alchemy.com/v2/B4HZBW5VlKKuMvgYcgRMSEHPO_tFEwd1',
+  'https://eth-sepolia.g.alchemy.com/v2/FfIrwZNdy3_kn4I-0emMBuuPRR0lRhwq',
 );
 
-const cometUSDCPool = "0xF09F0369aB0a875254fB565E52226c88f10Bc839";
-const compoundUSDC = "0xDB3cB4f2688daAB3BFf59C24cC42D4B6285828e9";
+const cometUSDCPool = "0xAec1F48e02Cfb822Be958B68C7957156EB3F0b6e";
+const compoundUSDC = "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238";
 
-const aavePool = "0xcC6114B983E4Ed2737E9BD3961c9924e6216c704";
-const aaveUSDC = "0x52d800ca262522580cebad275395ca6e7598c014"
+const aavePool = "0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951";
+const aaveUSDC = "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8"
 
 export async function fetchAaveBalance(address) {
 
   // View contract used to fetch all reserves data (including market base currency data), and user reserves
   const poolDataProviderContract = new UiPoolDataProvider({
-    uiPoolDataProviderAddress: markets.AaveV3Mumbai.UI_POOL_DATA_PROVIDER,
+    uiPoolDataProviderAddress: markets.AaveV3Sepolia.UI_POOL_DATA_PROVIDER,
     provider,
-    chainId: ChainId.mumbai,
+    chainId: ChainId.sepolia,
   });
 
   // View contract used to fetch all reserve incentives (APRs), and user incentives
   const incentiveDataProviderContract = new UiIncentiveDataProvider({
     uiIncentiveDataProviderAddress:
-    markets.AaveV3Mumbai.UI_INCENTIVE_DATA_PROVIDER,
+    markets.AaveV3Sepolia.UI_INCENTIVE_DATA_PROVIDER,
     provider,
-    chainId: ChainId.mumbai,
+    chainId: ChainId.sepolia,
   });
 
   let usdcInfo;
   const reserves = await poolDataProviderContract.getReservesHumanized({
-    lendingPoolAddressProvider: markets.AaveV3Mumbai.POOL_ADDRESSES_PROVIDER,
+    lendingPoolAddressProvider: markets.AaveV3Sepolia.POOL_ADDRESSES_PROVIDER,
   });
   
   const userReserves = await poolDataProviderContract.getUserReservesHumanized({
-    lendingPoolAddressProvider: markets.AaveV3Mumbai.POOL_ADDRESSES_PROVIDER,
+    lendingPoolAddressProvider: markets.AaveV3Sepolia.POOL_ADDRESSES_PROVIDER,
     user: address,
   });
 
