@@ -4,7 +4,7 @@ import IUniswapV3PoolABI from '@uniswap/v3-core/artifacts/contracts/interfaces/I
 import { Token, Percent,CurrencyAmount} from '@uniswap/sdk-core';
 import { JSBI } from "@uniswap/sdk";
 
-const chainId = 80001;
+const chainId = 11155111;
 const token0 = import.meta.env.VITE_AAVE_USDC;
 const token1 = import.meta.env.VITE_AAVE_USDT;
 const currentPoolAddress = import.meta.env.VITE_USDC_USDT_AAVE;
