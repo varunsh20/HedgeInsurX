@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <BrowserRouter>
-      <ThirdwebProvider activeChain={Mumbai} supportedChains={[Mumbai,Sepolia,BinanceTestnet,ArbitrumSepolia]}>
+      <ThirdwebProvider activeChain={Sepolia} supportedChains={[Mumbai,Sepolia,BinanceTestnet,ArbitrumSepolia]}>
       <TabsProvider>
       <App />
       </TabsProvider>
