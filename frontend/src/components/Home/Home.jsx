@@ -5,13 +5,16 @@ import {FaTwitter, FaGithub,FaLinkedin} from 'react-icons/fa';
 import ins from "../../assets/ins.webp";
 import yeld from "../../assets/yeld.webp";
 import bridge from "../../assets/bridge.png";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function Home(){
+
     return(
         <>
         <Box >
         <Tickers/>
-
+        <Button onClick={postData}></Button>
         <Box  mt={6} p="50px" >
             <HStack spacing={10} display={"flex"} alignItems="flex-start" justifyContent="center"
             p="50px"> 
